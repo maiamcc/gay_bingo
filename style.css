@@ -6,6 +6,13 @@ body {
     font-size: 20px;
     font-family: "Lucida Grande", Verdana,Arial, Helvetica, sans-serif;
 }
+table {
+    height: 50em;
+    width: 60em;
+}
+th {
+    height: 1em;
+}
 h1, th {
     font-family: Georgia, "Times New Roman",Times, serif;
 }

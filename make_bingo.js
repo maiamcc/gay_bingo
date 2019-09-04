@@ -7,16 +7,35 @@ Array.prototype.popRand = function () {
     return this.splice(i, 1)
 }
 
-var words = ['flash', 'inform', 'hum', 'defective', 'glossy',
-    'minister', 'cloistered', 'smash', 'narrow', 'reply',
-    'aboriginal', 'reflective', 'brake', 'hover', 'carriage',
-    'advice', 'receive', 'tawdry', 'cook', 'enter',
-    'scrub', 'tearful', 'ring', 'groan', 'untidy',
-    'sun', 'same', 'believe', 'move', 'stale',
-    'rule', 'desire', 'run', 'snow', 'train',
-    'early', 'thick', 'adventurous', 'tender', 'listen',
-    'guard', 'pocket', 'account', 'symptomatic', 'round',
-    'complete', 'obtain', 'stocking', 'grin', 'friendly']
+var elems = [
+    'brightly colored hair',
+    'undercut',
+    'pixie cut',
+    'funky lipstick',
+    'non-earlobe piercing(s)',
+    'doc martins',
+    'flannel',
+    'weird glasses',
+    'rainbow belt/suspenders',
+    'ties',
+    '2+ cats',
+    'anxiety',
+    'short nails',
+    'processing',
+    'best friends with your ex',
+    'Team Willow',
+    'can\'t sit in chairs',
+    'oh, she\'s not into me, she\'s just being nice',
+    'body hair',
+    'no makeup',
+    'casual misandry',
+    'astrology',
+    'make your own clothes',
+    'the gay nod when you see another gay in public',
+    'softball and/or rugby',
+    'bikes',
+    'can\'t drive',
+ ]
 
 function initAll() {
     if (document.getElementById) {
@@ -35,8 +54,8 @@ function newCard() {
 
 function setSquareAtIndex(i) {
     var id = squareIdForIndex(i)
-    var wd = words.popRand()
-    document.getElementById(id).innerHTML = wd;
+    var el = elems.popRand()
+    document.getElementById(id).innerHTML = el;
     document.getElementById(id).className = "";
     document.getElementById(id).onmousedown = toggleColor;
 }
