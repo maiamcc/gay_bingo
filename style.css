@@ -3,7 +3,7 @@
 body {
     background-color: #FFFFFF;
     color: black;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Lucida Grande", Verdana,Arial, Helvetica, sans-serif;
 }
 
@@ -12,7 +12,7 @@ h1, th {
 }
 
 h1 {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 table {
