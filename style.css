@@ -1,33 +1,39 @@
 /* https://codepen.io/fannietaeyang/pen/xOQzvq */
 
 body {
-    background-color: white;
+    background-color: #FFFFFF;
     color: black;
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Lucida Grande", Verdana,Arial, Helvetica, sans-serif;
 }
-table {
-    height: 50em;
-    width: 60em;
-}
-th {
-    height: 1em;
-}
+
 h1, th {
     font-family: Georgia, "Times New Roman",Times, serif;
 }
+
 h1 {
-    font-size: 28px;
+    font-size: 22px;
 }
+
 table {
+    margin: 1em;
     border-collapse: collapse;
+    background-color: #FFFFFF;
 }
+
 th, td {
     padding: 10px;
     border: 2px #666 solid;
     text-align: center;
-    width: 20%;
+    height: 7em;
+    width: 7em;
+    overflow: hidden;
 }
+
+th {
+    height: 1em;
+}
+
 #free, .pickedBG {
-    background-color: #f66;
+    background-color: #FF6666;
 }
