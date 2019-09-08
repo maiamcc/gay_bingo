@@ -50,3 +50,22 @@ th {
 #free, .pickedBG {
     background-color: transparent;
 }
+
+#save-btn {
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+
+    background-color: #e7e7e7;
+    border-radius: 12px;
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#save-btn:hover {
+    background-color: #E0FFFF;
+}
