@@ -39,6 +39,8 @@ var elems = [
     'don\'t make your own bed but make your ladyfriend\'s bed when you stay over',
     'moving in after dating for under a year',
     'Indigo Girls',
+    'vegetarian',
+    'an ex in common with your ex and/or partner',
  ]
 
 function initAll() {
