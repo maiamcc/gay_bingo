@@ -4,8 +4,8 @@
     <!-- https://codepen.io/fannietaeyang/pen/xOQzvq -->
     <head>
         <link rel="stylesheet" href="style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-        <script type="text/javascript" src="FileSaver.js" ></script>
+        <script type="text/javascript" src="html2canvas.min.js"></script>
+        <script type="text/javascript" src="FileSaver.js"></script>
     </head>
 
     <body>
@@ -13,13 +13,10 @@
 
         <script>
             window.take = function() {
-                html2canvas(document.querySelector("#bingo-card"), {
-                    onrendered: function(canvas) {
-                        canvas.toBlob(function(blob) {
-                            saveAs(blob, "gaybingo.png");
-                        });
+                html2canvas(document.querySelector("#bingo-card")).then(function(canvas) {
+                        document.body.appendChild(canvas);
                     }
-                });
+                );
             };
         </script>
 
