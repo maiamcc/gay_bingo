@@ -35,26 +35,13 @@ table {
     background-color: #FFFFFF;
 }
 
-.gradient {
-    background: purple; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, rgba(255, 166, 0, 0.5) , rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(0, 0, 255, 0.5), rgba(238, 129, 238, 0.5)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, rgba(255, 166, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(0, 0, 255, 0.5), rgba(238, 129, 238, 0.5)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, rgba(255, 166, 0, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(0, 0, 255, 0.5), rgba(238, 129, 238, 0.5)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, rgba(255, 166, 0, 0.5) , rgba(255, 255, 0, 0.5), rgba(0, 128, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(0, 0, 255, 0.5), rgba(238, 129, 238, 0.5)); /* Standard syntax (must be last) */
-}
-
 th, td {
     padding: 10px;
-    border: 3px #666 solid;
+    border: 2px #666 solid;
     text-align: center;
     height: 7.5em;
     width: 7.5em;
     overflow: hidden;
-    background-color: #FFFFFF;
-}
-
-td {
-    font-weight: bold;
 }
 
 th {
@@ -62,7 +49,7 @@ th {
 }
 
 #free, .pickedBG {
-    background-color: transparent;
+    background-color: #FF6666;
 }
 
 #save-btn {
