@@ -32,7 +32,7 @@ var elems = [
     'astrology',
     'make your own clothes',
     'the gay nod when you see another gay in public',
-    'softball and/or rugby',
+    'softball / rugby / derby',
     'bikes',
     'can\'t drive',
     'can use a sword, do a martial art, real strong, in some other way deadly',
