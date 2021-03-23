@@ -6,6 +6,6 @@ Behold, gay bingo -- the jankiest lil web page you could ask for.
 - refresh the page for a new bingo board
 - click the button at bottom to save as a PNG
 
-[*Play It Here!*](http://code.maiamccormick.com/projects/gay_bingo/)
+[*Play It Here!*](http://code.maiamccormick.com/gay_bingo/)
 
 The list of bingo elements [lives here](https://github.com/maiamcc/gay_bingo/blob/master/make_bingo.js#L10) -- PRs with contributions / GitHub issues with suggestions are most welcome.
