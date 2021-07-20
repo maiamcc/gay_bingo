@@ -36,11 +36,12 @@ var elems = [
     'bikes',
     'can\'t drive',
     'can use a sword, do a martial art, real strong, in some other way deadly',
-    'don\'t make your own bed but make your ladyfriend\'s bed when you stay over',
+    'don\'t make your own bed but make your sweetie\'s bed when you stay over',
     'moving in after dating for under a year',
     'Indigo Girls',
     'vegetarian',
     'an ex in common with your ex and/or partner',
+    'have hooked up with someone with the ~same name as you',
  ]
 
 function initAll() {
