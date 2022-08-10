@@ -47,6 +47,10 @@ var elems = [
 function initAll() {
     if (document.getElementById) {
         newCard();
+
+        elem = document.getElementById("new-board-btn");
+        elem.onclick = newCard;
+
     }
     else {
         alert("Sorry, your browser doesn't support this script");
@@ -54,15 +58,17 @@ function initAll() {
 }
 
 function newCard() {
+    // alert("new card");
+    var elems_to_populate = [...elems]
     for (let i = 0; i < 24; i++) {
-        setSquareAtIndex(i);
+        var elem = elems_to_populate.popRand()
+        setSquareAtIndex(i, elem);
     }
 }
 
-function setSquareAtIndex(i) {
+function setSquareAtIndex(i, elem) {
     var id = squareIdForIndex(i)
-    var el = elems.popRand()
-    document.getElementById(id).innerHTML = el;
+    document.getElementById(id).innerHTML = elem;
     document.getElementById(id).className = "";
     document.getElementById(id).onmousedown = toggleColor;
 }

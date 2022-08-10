@@ -52,7 +52,7 @@ th {
     background-color: #FF6666;
 }
 
-#save-btn {
+button {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -67,6 +67,6 @@ th {
     transition-duration: 0.4s;
 }
 
-#save-btn:hover {
+button:hover {
     background-color: #E0FFFF;
 }
