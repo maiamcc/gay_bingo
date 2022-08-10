@@ -20,6 +20,10 @@ h1 {
     letter-spacing: 4px;
 }
 
+.inline {
+    display:  inline;
+}
+
 table {
     margin: auto;
     border-collapse: collapse;
@@ -51,6 +55,16 @@ th {
 #free, .pickedBG {
     background-color: #FF6666;
 }
+
+/*#buttons {
+    display: inline;
+    float:  left;
+}
+
+#bingo-select {
+    display: inline;
+    float:  right;
+}*/
 
 button {
     padding: 15px 32px;

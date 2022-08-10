@@ -27,6 +27,18 @@
         <p>Click a square to toggle it. Refresh page for a new card. Click the button below to save your card as a png.</p>
         <p>Want to contribute some gay shit? <a href="https://github.com/maiamcc/gay_bingo" target="_blank">Find us on GitHub</a> (make a PR or open an issue).</p>
 
+        <div id="bingo-select">
+            <h3 class="inline">Pick your bingo board:</h3>
+            <form id="board-select-form" class="inline">
+              <select id="board-select">
+              </select>
+            </form>
+        </div>
+
+        <div id="buttons">
+            <button id="save-btn" onclick="take()">Save as PNG</button>
+            <button id="new-board-btn">New board</button>  <!-- fn bound in make_bingo.js -->
+        </div>
         <div id="bingo-card">
             <div class="wrapper">
                 <h2 class="bingo-title">Gay Bingo</h2>
@@ -77,9 +89,5 @@
                 <p>By <a href="https://github.com/maiamcc" target="_blank">Maia McCormick</a>: http://bit.ly/gay_bingo</p>
             </div>
         </div>
-        <p>
-            <button id="save-btn" onclick="take()">Save as PNG</button>
-            <button id="new-board-btn">New board</button>  <!-- fn bound in make_bingo.js -->
-        </p>
     </body>
 </html>

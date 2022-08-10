@@ -7,7 +7,7 @@ Array.prototype.popRand = function () {
     return this.splice(i, 1)
 }
 
-var elems = [
+var wlw_elems = [
     'brightly colored hair',
     'undercut/side shave',
     'pixie cut',
@@ -42,26 +42,101 @@ var elems = [
     'vegetarian',
     'an ex in common with your ex and/or partner',
     'have hooked up with someone with the ~same name as you',
- ]
+ ];
+
+var bisexual_disaster_elems = [
+    'an ex in common with your ex and/or partner',
+    'anxiety',
+    'astrology',
+    'best friends with your ex',
+    'mermaids',
+    'brightly colored hair',
+    'can use a sword, do a martial art, real strong, in some other way deadly',
+    'can\'t drive',
+    'can\'t sit in chairs',
+    'doc martins',
+    'don\'t make your own bed but make your sweetie\'s bed when you stay over',
+    'flannel or jeans jacket',
+    'have hooked up with someone with the ~same name as you',
+    'make your own clothes',
+    'non-earlobe piercing(s)',
+    '"oh, they\'re not into me, they\'re just being nice"',
+    'pixie cut',
+    'rainbow belt/suspenders',
+    'amazing eyebrows',
+    'the gay nod when you see another gay in public',
+    'undercut/side shave',
+    'vegetarian',
+    'leather jackets',
+    'cuffs pants legs',
+    'good taste',
+    'vans',
+    'indecisive',
+    'has been asked to be in a threesome',
+    'puns',
+    '"damn they\'re both hot"',
+    'purple',
+    'tucks in shirt',
+    'oh that person is hot! Are they a boy or a girl? Oh it doesn’t matter.',
+    'stompy shoes',
+    'gender squiggly',
+    'crushes on villains',
+    'finger gun',
+    'peace signs',
+    'bisexual bob (the haircut not the person)',
+    'O.O women with muscles, O.O men with muscles',
+    'inability to talk to attractive people',
+    'questioning sexuality again',
+    'frogs',
+ ];
+
+const boards = {
+    "wlw": wlw_elems,
+    "bisexual disaster": bisexual_disaster_elems,
+};
+
+function _getSelectedBoard() {
+    var e = document.getElementById("board-select");
+    var value = e.value;
+    return e.options[e.selectedIndex].text.toLowerCase();
+}
+
+function getElemsForSelectedBoard() {
+    var board_name = _getSelectedBoard();
+    var elems = boards[board_name];
+    return [...elems];
+}
+
+function populateBoardSelectDropdown() {
+    var select = document.getElementById("board-select");
+    var options = Object.keys(boards);
+
+    for(var i = 0; i < options.length; i++) {
+        var opt = options[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select.appendChild(el);
+    }
+}
 
 function initAll() {
     if (document.getElementById) {
+        populateBoardSelectDropdown();
         newCard();
 
-        elem = document.getElementById("new-board-btn");
-        elem.onclick = newCard;
-
-    }
-    else {
+        document.getElementById("new-board-btn").onclick = newCard;
+        document.getElementById("board-select");
+        document.querySelector('form').addEventListener('change', newCard);
+    } else {
         alert("Sorry, your browser doesn't support this script");
     }
 }
 
 function newCard() {
-    // alert("new card");
-    var elems_to_populate = [...elems]
+    elems = getElemsForSelectedBoard()
     for (let i = 0; i < 24; i++) {
-        var elem = elems_to_populate.popRand()
+        var elem = elems.popRand()
         setSquareAtIndex(i, elem);
     }
 }
