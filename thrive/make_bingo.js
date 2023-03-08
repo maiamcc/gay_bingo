@@ -36,7 +36,8 @@ var thrive_elems = [
     'technical issues',
     'bringing your whole self to work',
     'mentioning the swag offerings',
-    '"and I am a Toaster"'
+    '"and I am a Toaster"',
+    'top of mind',
  ];
 
 const boards = {
