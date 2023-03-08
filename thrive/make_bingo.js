@@ -31,7 +31,7 @@ var thrive_elems = [
     'bread puns',
     'a presenter talks about being hungry',
     '"Live at Thrive"',
-    'stupid c-suite gimick',
+    'stupid c-suite gimmick',
     '"...as OneTeam"',
     'technical issues',
     'bringing your whole self to work',
