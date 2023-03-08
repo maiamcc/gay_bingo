@@ -35,9 +35,11 @@ var thrive_elems = [
     '"...as OneTeam"',
     'technical issues',
     'bringing your whole self to work',
-    'mentioning the swag offerings',
+    'discussing swag offerings',
     '"and I am a Toaster"',
-    'top of mind',
+    '"top of mind"',
+    'unnecessarily verbing nouns',
+    'the most boring man in the world'
  ];
 
 const boards = {
