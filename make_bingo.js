@@ -42,6 +42,8 @@ var wlw_elems = [
     'vegetarian',
     'an ex in common with your ex and/or partner',
     'have hooked up with someone with the ~same name as you',
+    'rock climbing',
+    'undercut',
  ];
 
 var bisexual_disaster_elems = [
