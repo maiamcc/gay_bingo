@@ -7,6 +7,8 @@ Array.prototype.popRand = function () {
     return this.splice(i, 1)
 }
 
+const FREE_SQUARE_INDEX = 12
+
 var wlw_elems = [
     'brightly colored hair',
     'undercut/side shave',
@@ -137,13 +139,18 @@ function initAll() {
 
 function newCard() {
     elems = getElemsForSelectedBoard()
-    for (let i = 0; i < 24; i++) {
-        var elem = elems.popRand()
-        setSquareAtIndex(i, elem);
+    for (let i = 0; i < 25; i++) {
+        if (i != FREE_SQUARE_INDEX) {
+            var elem = elems.popRand()
+            setSquareAtIndex(i, elem);
+        }
     }
 }
 
 function setSquareAtIndex(i, elem) {
+    if (i == FREE_SQUARE_INDEX) {
+        throw new Error("U can't set the free space!");
+    }
     var id = squareIdForIndex(i)
     document.getElementById(id).innerHTML = elem;
     document.getElementById(id).className = "";
@@ -154,6 +161,15 @@ function squareIdForIndex(i) {
     return "square"+i
 }
 
+function is_picked(square) {
+    return Boolean(parseInt(square.dataset.picked))
+}
+
+function toggle(square) {
+    var toggled = + !is_picked(square)
+    square.dataset.picked = toggled
+}
+
 function toggleColor(evt) {
     if (evt) {
         var thisSquare = evt.target;
@@ -161,9 +177,6 @@ function toggleColor(evt) {
         var thisSquare = window.event.srcElement;
     }
 
-    if (thisSquare.className == "") {
-        thisSquare.className = "pickedBG";
-    } else {
-        thisSquare.className = "";
-    }
+    toggle(thisSquare)
 }
+

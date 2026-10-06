@@ -52,7 +52,7 @@ th {
     height: 1em;
 }
 
-#free, .pickedBG {
+td[data-picked="1"] {
     background-color: #FF6666;
 }
 
