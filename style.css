@@ -56,15 +56,13 @@ th {
     background-color: #FF6666;
 }
 
-/*#buttons {
-    display: inline;
-    float:  left;
+#buttons {
+    padding: 1em 0 1em 0;
 }
 
 #bingo-select {
-    display: inline;
-    float:  right;
-}*/
+    padding: 1em 0 1em 0;
+}
 
 button {
     padding: 15px 32px;
