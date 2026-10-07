@@ -7,6 +7,14 @@ Array.prototype.popRand = function () {
     return this.splice(i, 1)
 }
 
+const rowStart = [0, 1, 2, 3, 4];
+const rows = rowStart.map((i) => Array.from({ length: 5 }, (_, x) => i + 5 * x));
+const colStart = [0, 5, 10, 15, 20];
+const cols = colStart.map((i) => Array.from({ length: 5 }, (_, x) => i + x)); 
+const diag_1 = Array.from({ length: 5 }, (_, x) => x * 6); 
+const diag_2 = Array.from({ length: 5 }, (_, x) => (x+1) * 4);
+const BINGO_INDEXES = rows.concat(cols, [diag_1, diag_2])
+
 const FREE_SQUARE_INDEX = 12
 
 var wlw_elems = [
@@ -151,23 +159,36 @@ function setSquareAtIndex(i, elem) {
     if (i == FREE_SQUARE_INDEX) {
         throw new Error("U can't set the free space!");
     }
-    var id = squareIdForIndex(i)
-    document.getElementById(id).innerHTML = elem;
-    document.getElementById(id).className = "";
-    document.getElementById(id).onmousedown = toggleColor;
+    var square = squareForIndex(i)
+    square.innerHTML = elem;
+    square.className = "";
+    square.onmousedown = toggleColor;
 }
 
 function squareIdForIndex(i) {
     return "square"+i
 }
 
-function is_picked(square) {
+function squareForIndex(i) {
+    var id = squareIdForIndex(i)
+    return document.getElementById(id)
+}
+
+function isPicked(square) {
     return Boolean(parseInt(square.dataset.picked))
 }
 
-function toggle(square) {
-    var toggled = + !is_picked(square)
+function togglePicked(square) {
+    var toggled = + !isPicked(square)
     square.dataset.picked = toggled
+}
+
+function markWon(square, won) {
+    if (won) {
+        square.classList.add("won");
+    } else {
+        square.classList.remove("won");
+    }
 }
 
 function toggleColor(evt) {
@@ -177,6 +198,32 @@ function toggleColor(evt) {
         var thisSquare = window.event.srcElement;
     }
 
-    toggle(thisSquare)
+    togglePicked(thisSquare)
+    isBingo()
 }
 
+function isBingo() {
+    var won_indexes = []
+    for (let indexes of BINGO_INDEXES) {
+        var won = true
+        for (let i of indexes) {
+            won = won && isPicked(squareForIndex(i))
+        }
+        if (won) {
+            won_indexes.push(...indexes)
+        }
+    }
+
+    // first, un-mark everything as "won" in case bingos changed
+    for (let i = 0; i < 25; i++) {
+        markWon(squareForIndex(i), false)
+    }
+
+    // then, process won squares!
+    for (let i of new Set(won_indexes)) {
+        // todo: animation or something fun?
+        // todo: draw a line thru won squares?
+        //     (would need to know direction of the win, sigh)
+        markWon(squareForIndex(i), true)
+    }
+}

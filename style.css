@@ -56,6 +56,10 @@ td[data-picked="1"] {
     background-color: #FF6666;
 }
 
+td.won {
+    background-color: #00FFFF !important;
+}
+
 #buttons {
     padding: 1em 0 1em 0;
 }
